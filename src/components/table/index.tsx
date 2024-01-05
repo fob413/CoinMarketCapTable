@@ -1,4 +1,4 @@
-import { Table as BasicTable } from "@mantine/core";
+import { Table as BasicTable, Text } from "@mantine/core";
 import { TableRow } from "../table-row";
 import { CryptoCurrencyProps } from '../../utils/types';
 
@@ -25,17 +25,19 @@ export const Table = ({ data }: Props) => {
 
                 <BasicTable.Tbody>
                     {
-                        data.map((row) => (
-                            <TableRow
-                                name={row.name}
-                                price={row.price}
-                                marketCap={row.marketCap}
-                                circulatingSupply={row.circulatingSupply}
-                                change={row.change}
-                                symbol={row.symbol}
-                                key={row.id}
-                            />
-                        ))
+                        data.length > 0 ?
+                            data.map((row) => (
+                                <TableRow
+                                    name={row.name}
+                                    price={row.price}
+                                    marketCap={row.marketCap}
+                                    circulatingSupply={row.circulatingSupply}
+                                    change={row.change}
+                                    symbol={row.symbol}
+                                    key={row.id}
+                                />
+                            )) :
+                            <Text size={'lg'}>No Data</Text>
                     }
                 </BasicTable.Tbody>
             </BasicTable>

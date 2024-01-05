@@ -9,6 +9,8 @@ type Props = Omit<CryptoCurrencyProps, 'id'>
 export const TableRow = ({
     name, price, marketCap, circulatingSupply, change, symbol
 }: Props) => {
+
+    // TODO: Implement the actual icons for each cryptocurrency
     return (
         <Table.Tr data-testid={'table-row-component'}>
             <Table.Td>
