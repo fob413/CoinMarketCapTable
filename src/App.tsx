@@ -27,6 +27,8 @@ function App() {
     })
   }, [data]);
 
+  // TODO: Implement loading state
+
   return (
     <div className="App" data-testid='App'>
         <Table data={cryptoCurrencyData} />
