@@ -3,7 +3,7 @@ import { MOCKEDCRYPTOCURRENCY } from './mocks/cyptoCurrency';
 
 
 
-const getCryptoCurrency = () => {
+const getCryptoCurrency = (): any => {
     // returns a mocked api response data
     return MOCKEDCRYPTOCURRENCY;
 }

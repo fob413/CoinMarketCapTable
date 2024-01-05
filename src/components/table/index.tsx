@@ -1,14 +1,15 @@
 import { Table as BasicTable } from "@mantine/core";
 import { TableRow } from "../table-row";
+import { CryptoCurrencyProps } from '../../utils/types';
 
 import classes from './Table.module.css';
 
 
 type Props = {
-
+    data: CryptoCurrencyProps[];
 }
 
-export const Table = ({}: Props) => {
+export const Table = ({ data }: Props) => {
     return (
         <BasicTable.ScrollContainer minWidth={800} className={classes.table} data-testid='table-component'>
             <BasicTable verticalSpacing={'lg'}>
@@ -23,7 +24,19 @@ export const Table = ({}: Props) => {
                 </BasicTable.Thead>
 
                 <BasicTable.Tbody>
-                    <TableRow name={'Bitcoin'} price={'$53,260.20'} marketCap={'$361.32B'} circulatingSupply={'19.144M'} change={'1.37%'} symbol={'BTN'} />
+                    {
+                        data.map((row) => (
+                            <TableRow
+                                name={row.name}
+                                price={row.price}
+                                marketCap={row.marketCap}
+                                circulatingSupply={row.circulatingSupply}
+                                change={row.change}
+                                symbol={row.symbol}
+                                key={row.id}
+                            />
+                        ))
+                    }
                 </BasicTable.Tbody>
             </BasicTable>
         </BasicTable.ScrollContainer>
