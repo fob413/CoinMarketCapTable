@@ -27,6 +27,7 @@ const getCryptoCurrency = async (page: number): Promise<any> => {
 export const useGetCryptoCurrency = (page: number) => {
     return useQuery({
         queryKey: [`crypto-currency-${page}`],
-        queryFn: () => getCryptoCurrency(page)
+        queryFn: () => getCryptoCurrency(page),
+        refetchInterval: 120000
     })
 }
