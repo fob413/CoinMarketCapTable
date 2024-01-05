@@ -23,7 +23,7 @@ export const Table = ({}: Props) => {
                 </BasicTable.Thead>
 
                 <BasicTable.Tbody>
-                    
+                    <TableRow name={'Bitcoin'} price={'$53,260.20'} marketCap={'$361.32B'} circulatingSupply={'19.144M'} change={'1.37%'} symbol={'BTN'} />
                 </BasicTable.Tbody>
             </BasicTable>
         </BasicTable.ScrollContainer>
