@@ -1,8 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
+import { useGetCryptoCurrency } from "./hooks/queries/useGetCryptoCurrency";
 import './App.css';
 
 function App() {
+  const { data } = useGetCryptoCurrency();
+  console.log('>>>> ', data);
+
   return (
     <div className="App">
       <header className="App-header">
