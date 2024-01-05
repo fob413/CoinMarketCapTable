@@ -6,12 +6,12 @@ afterEach(cleanup);
 
 describe('Table', () => {
     test('should render', () => {
-       render(<Table />);
+       render(<Table data={[]} />);
        expect(screen.getByTestId('table-component')).toBeInTheDocument();
     });
 
     test('should render with the appropriate headers', () => {
-       render(<Table />);
+       render(<Table data={[]} />);
        expect(screen.getByText('Name')).toBeInTheDocument();
        expect(screen.getByText('Price')).toBeInTheDocument();
        expect(screen.getByText('Market Cap')).toBeInTheDocument();

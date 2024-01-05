@@ -1,16 +1,10 @@
 import { Table, Text, rem } from "@mantine/core";
 import { IconCoinBitcoin } from "@tabler/icons-react";
 import classes from './TableRow.module.css';
+import { CryptoCurrencyProps } from '../../utils/types'
 
 
-type Props = {
-    name: string;
-    price: string;
-    marketCap: string;
-    circulatingSupply: string;
-    change: string;
-    symbol: string;
-}
+type Props = Omit<CryptoCurrencyProps, 'id'>
 
 export const TableRow = ({
     name, price, marketCap, circulatingSupply, change, symbol
@@ -26,8 +20,8 @@ export const TableRow = ({
                     />
 
                     <div className={classes.nameContainer}>
-                        <Text size={'md'}>{name}</Text>
-                        <Text size={'md'}>{symbol}</Text>
+                        <Text size={'sm'}>{name}</Text>
+                        <Text size={'sm'}>{symbol}</Text>
                     </div>
                 </div>
             </Table.Td>
